@@ -2,10 +2,10 @@ process DEEPTOOLS_PLOTFINGERPRINT {
     tag "$meta.id"
     label 'process_high'
 
-    conda (params.enable_conda ? 'bioconda::deeptools=3.5.1' : null)
+    conda (params.enable_conda ? 'bioconda::deeptools=3.5.5' : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/deeptools:3.5.1--py_0' :
-        'quay.io/biocontainers/deeptools:3.5.1--py_0' }"
+        'https://depot.galaxyproject.org/singularity/deeptools:3.5.5--pyhdfd78af_0' :
+        'quay.io/biocontainers/deeptools:3.5.5--pyhdfd78af_0' }"
 
     input:
     tuple val(meta), path(bams), path(bais)
